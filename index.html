@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiques France Interactive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section class="hero">
+            <h1>La France en chiffres</h1>
+            <p class="subtitle">Explorer les statistiques par région</p>
+        </section>
+
+        <section class="map-container">
+            <div class="map-wrapper">
+                <!-- SVG de la France -->
+                <div id="map"></div>
+            </div>
+            <div class="data-display">
+                <div class="region-info">
+                    <h2>Sélectionnez une région</h2>
+                    <div id="region-stats"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="additional-content">
+            <h2>L'Immigration en France : en détail</h2>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>Évolution Historique</h3>
+                    <p>L'immigration en France a connu plusieurs vagues importantes depuis le XIXe siècle, façonnant la
+                        diversité culturelle du pays.</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="year">1850-1900</span>
+                            <p>Première vague d'immigration belge et italienne</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">1945-1975</span>
+                            <p>Les Trente Glorieuses : immigration massive de travailleurs</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">1980-1990</span>
+                            <p>Transition politique : immigration venue de l'est</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">1990-2020</span>
+                            <p>Mondialisation : immigration de nombreux pays</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="year">2020-Aujourd'hui</span>
+                            <p>Post-pandémie : nouvelle politique migratoire</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>Chiffres Clés en 2023</h3>
+                    <div class="key-figures">
+                        <div class="figure">
+                            <span class="number">7.3</span>
+                            <span class="label">millions d'immigrés en France</span>
+                        </div>
+                        <div class="figure">
+                            <span class="number">10.7%</span>
+                            <span class="label">de la population totale</span>
+                        </div>
+                        <div class="figure">
+                            <span class="number">47.7%</span>
+                            <span class="label">des immigrés vivant en France sont nés en Afrique</span>
+                        </div>
+                        <div class="figure">
+                            <span class="number">32.3%</span>
+                            <span class="label">des immigrés vivant en France sont nés en Europe</span>
+                        </div>
+                        <div class="figure">
+                            <span class="number">13.7%</span>
+                            <span class="label">des immigrés vivant en France sont nés en Asie</span>
+                        </div>
+                        <div class="figure">
+                            <span class="number">6.3%</span>
+                            <span class="label">des immigrés vivant en France sont nés en Amérique ou en Océanie</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="integration-section">
+                <h3>Intégration et Diversité</h3>
+                <div class="integration-grid">
+                    <div class="integration-item">
+                        <h4>Éducation</h4>
+                        <p>Programmes d'intégration scolaire et linguistique pour les nouveaux arrivants</p>
+                    </div>
+                    <div class="integration-item">
+                        <h4>Emploi</h4>
+                        <p>Initiatives pour l'insertion professionnelle et la reconnaissance des compétences</p>
+                    </div>
+                    <div class="integration-item">
+                        <h4>Culture</h4>
+                        <p>Enrichissement mutuel et dialogue interculturel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-visualization">
+            <div class="top-regions">
+                <h3>Top 5 régions d'accueil</h3>
+                <div class="bar-chart" id="topRegionsChart"></div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-card">
+                    <h3>Origines Principales</h3>
+                    <div id="originsCloud" class="tag-cloud"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison-tool">
+            <h2>Comparaison des Régions</h2>
+            <div class="comparison-controls">
+                <select id="region1" class="region-select">
+                    <option value="">Sélectionnez une région</option>
+                </select>
+                <select id="region2" class="region-select">
+                    <option value="">Sélectionnez une région</option>
+                </select>
+                <button id="compareBtn" class="compare-button">Comparer</button>
+            </div>
+            <div id="comparisonResult" class="comparison-result"></div>
+        </section>
+
+        <section class="interactive-features">
+            <div class="feature-cards">
+                <div class="population-visualization">
+                    <h3>Évolution démographique par région</h3>
+                    <div class="timeline-controls">
+                        <input type="range" id="demographySlider" min="1950" max="2020" step="10" value="2020">
+                        <span id="demographyYearDisplay">2020</span>
+                    </div>
+                    <div id="demographyContent"></div>
+                </div>
+                <div class="feature-card" id="timelineCard">
+                    <h3>Chronologie Interactive</h3>
+                    <div class="slider-container">
+                        <input type="range" min="1950" max="2023" value="2023" class="year-slider" id="yearSlider">
+                        <div id="yearDisplay">2023</div>
+                    </div>
+                    <div id="timelineContent"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="data.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.5/build/d3.layout.cloud.min.js"></script>
+</body>
+
+</html>
